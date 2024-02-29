@@ -7,10 +7,13 @@ const { ObjectId } = require("mongoose").Types; // Import ObjectId
 const app = express();
 const port = 3000;
 
-mongoose.connect("mongodb://localhost:27017/travelAgency", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://almasamrenoff:almas_050724@cluster0.siu1ooz.mongodb.net/travelAgency?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
